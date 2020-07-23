@@ -1,0 +1,65 @@
+{
+  "id": "1344306",
+  "name": "Vue",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "Vue项目图标",
+  "glyphs": [
+    {
+      "icon_id": "1012119",
+      "name": "用户",
+      "font_class": "user",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "4933204",
+      "name": "锁",
+      "font_class": "suo",
+      "unicode": "e6e9",
+      "unicode_decimal": 59113
+    },
+    {
+      "icon_id": "2471395",
+      "name": "文章",
+      "font_class": "wenzhang",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "3405398",
+      "name": "好友",
+      "font_class": "haoyou",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    },
+    {
+      "icon_id": "4551252",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "4846517",
+      "name": "编辑",
+      "font_class": "bianji",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "5732293",
+      "name": "分类",
+      "font_class": "sort",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "10030439",
+      "name": "ic_脚丫",
+      "font_class": "ic_jiaoya",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    }
+  ]
+}
