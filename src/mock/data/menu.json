@@ -1,0 +1,82 @@
+[
+  {
+    "authName": "用户管理",
+    "id": 1,
+    "icon": "el-icon-s-custom",
+    "children": [
+      {
+        "authName": "用户列表",
+        "id": 22,
+        "children": [],
+        "order": 1,
+        "path": "/users"
+      }
+    ],
+    "order": 1,
+    "path": ""
+  },
+  {
+    "authName": "权限管理",
+    "id": 2,
+    "icon": "el-icon-s-opportunity",
+    "children": [
+      {
+        "authName": "权限列表",
+        "id": 22,
+        "children": [],
+        "order": 1,
+        "path": "/welcome"
+      }
+    ],
+    "order": 1,
+    "path": ""
+  },
+  {
+    "authName": "商品管理",
+    "id": 3,
+    "icon": "el-icon-s-goods",
+    "children": [
+      {
+        "authName": "用户管理",
+        "id": 22,
+        "children": [],
+        "order": 1,
+        "path": ""
+      }
+    ],
+    "order": 1,
+    "path": "/"
+  },
+  {
+    "authName": "订单管理",
+    "id": 4,
+    "icon": "el-icon-s-order",
+    "children": [
+      {
+        "authName": "用户管理",
+        "id": 22,
+        "children": [],
+        "order": 1,
+        "path": ""
+      }
+    ],
+    "order": 1,
+    "path": "/order"
+  },
+  {
+    "authName": "数据管理",
+    "id": 5,
+    "icon": "el-icon-s-data",
+    "children": [
+      {
+        "authName": "用户管理",
+        "id": 22,
+        "children": [],
+        "order": 1,
+        "path": ""
+      }
+    ],
+    "order": 1,
+    "path": ""
+  }
+]

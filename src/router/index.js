@@ -5,31 +5,52 @@ Vue.use(Router)
 
 // 路由表
 const router = new Router({
-  routes: [{
+  routes: [
+    {
       path: '/',
       redirect: '/login'
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/components/login')
+      component: () => import('@/views/common/login')
     },
     {
       path: '/home',
       name: 'home',
-      component: () => import('@/components/home')
+      redirect: '/welcome',
+      meta:{
+        title:'首页'
+      },
+      component: () => import('@/layout/home'),
+      children: [
+        {
+          path: '/welcome',
+          name: 'welcome',
+          meta:{
+            title:'权限列表'
+          },
+          component: () => import('@/views/welcome')
+        },
+        {
+          path: '/users',
+          name: 'users',
+          meta:{
+            title:'用户列表'
+          },
+          component: () => import('@/views/users')
+        }
+      ]
     }
   ]
 })
 
 // 导航守卫
 router.beforeEach((to, from, next) => {
-  if (to.path === "/login")
-    return next();
-  const token = sessionStorage.getItem("token");
-  if (!token)
-    next("/login");
-  next();
+  if (to.path === '/login') return next()
+  const token = sessionStorage.getItem('token')
+  if (!token) next('/login')
+  next()
 })
 
-export default router;
+export default router
