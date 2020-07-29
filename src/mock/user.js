@@ -12,7 +12,7 @@ Mock.mock(RegExp(settings.baseUrl + '/api/user/login.*'), {
 })
 
 // 用户分页数据
-Mock.mock(RegExp(settings.baseUrl + '/api/user/selectAll.*'), {
+Mock.mock(RegExp(settings.baseUrl + '/api/user/selectPage.*'), {
   code: 200,
   message: '获取所有用户信息',
   data: {

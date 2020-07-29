@@ -1,8 +1,9 @@
 import request from '@/plugins/request'
 
-export function getMenuList() {
+export function getMenuList(params) {
   return request({
     method: 'GET',
-    url: '/api/menu/selectAll'
+    url: '/api/menu/selectAll',
+    params
   })
 }

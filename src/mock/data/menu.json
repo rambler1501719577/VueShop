@@ -6,7 +6,7 @@
     "children": [
       {
         "authName": "用户列表",
-        "id": 22,
+        "id": 11,
         "children": [],
         "order": 1,
         "path": "/users"
@@ -22,10 +22,17 @@
     "children": [
       {
         "authName": "权限列表",
+        "id": 21,
+        "children": [],
+        "order": 1,
+        "path": "/permission"
+      },
+      {
+        "authName": "角色列表",
         "id": 22,
         "children": [],
         "order": 1,
-        "path": "/welcome"
+        "path": "/role"
       }
     ],
     "order": 1,

@@ -19,26 +19,42 @@ const router = new Router({
       path: '/home',
       name: 'home',
       redirect: '/welcome',
-      meta:{
-        title:'首页'
+      meta: {
+        title: '首页'
       },
       component: () => import('@/layout/home'),
       children: [
         {
           path: '/welcome',
           name: 'welcome',
-          meta:{
-            title:'权限列表'
+          meta: {
+            title: '权限列表'
           },
           component: () => import('@/views/welcome')
         },
         {
           path: '/users',
           name: 'users',
-          meta:{
-            title:'用户列表'
+          meta: {
+            title: '用户列表'
           },
-          component: () => import('@/views/users')
+          component: () => import('@/views/users/users')
+        },
+        {
+          path: '/permission',
+          name: 'permission',
+          meta: {
+            title: '权限列表'
+          },
+          component: () => import('@/views/power/permission')
+        },
+        {
+          path: '/role',
+          name: 'role',
+          meta: {
+            title: '角色列表'
+          },
+          component: () => import('@/views/power/role')
         }
       ]
     }

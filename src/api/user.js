@@ -20,7 +20,7 @@ export function userList(params) {
   return request({
     method: 'GET',
     params,
-    url: '/api/user/selectAll'
+    url: '/api/user/selectPage'
   })
 }
 

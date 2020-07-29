@@ -40,6 +40,31 @@
       </span>
     </el-dialog>
 
+    <!-- 分配角色对话框 -->
+    <div class="set-role-dialog">
+      <el-dialog title="分配角色" :visible.sync="setRoleDialogVisible" width="50%" @close="clearForm">
+        <div class="box">
+          <p>当前用户：{{userInfo.username}}</p>
+          <p>当前用户的角色为：{{userInfo.roleName}}</p>
+          <p>
+            分配新角色:
+            <el-select size="mini" v-model="userRole" placeholder="请选择">
+              <el-option
+                v-for="item in roleList"
+                :key="item.id"
+                :label="item.roleName"
+                :value="item.roleName"
+              ></el-option>
+            </el-select>
+          </p>
+        </div>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="setRoleDialogVisible = false">取 消</el-button>
+          <el-button type="primary" @click="setUserRole">确 定</el-button>
+        </span>
+      </el-dialog>
+    </div>
+
     <!-- 数据表格 -->
     <el-table v-loading="loading" :data="userList" style="width: 100%" border stripe>
       <el-table-column align="center" type="index" label="#" width="80"></el-table-column>
@@ -71,20 +96,27 @@
             ></el-button>
           </el-tooltip>
           <el-tooltip :enterable="false" effect="dark" content="分配权限" placement="top">
-            <el-button type="warning" size="mini" icon="el-icon-s-tools" @click="delete(scope.row)"></el-button>
+            <el-button
+              type="warning"
+              size="mini"
+              icon="el-icon-s-tools"
+              @click="setRole(scope.row)"
+            ></el-button>
           </el-tooltip>
         </template>
       </el-table-column>
     </el-table>
     <!-- 分页组件 -->
-    <el-pagination
-      background
-      layout="prev, pager, next"
-      :total="total"
-      :page-size="15"
-      hide-on-single-page
-      @current-change="handlePageChange"
-    ></el-pagination>
+    <div class="pagination">
+      <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="total"
+        :page-size="15"
+        hide-on-single-page
+        @current-change="handlePageChange"
+      ></el-pagination>
+    </div>
   </div>
 </template>
 
@@ -98,6 +130,8 @@ import {
   userDetail,
   deleteUser,
 } from '@/api/user'
+import '@/mock/role'
+import { getRoleData } from '@/api/role'
 export default {
   name: 'users',
   data() {
@@ -127,6 +161,7 @@ export default {
     }
     return {
       userList: [],
+      roleList: [], //所有角色列表
       total: 0,
       queryParam: {
         keyword: '',
@@ -134,6 +169,8 @@ export default {
         limit: 0,
       }, //查询参数
       mode: 'edit', //当前操作模式,新增为add,修改为edit
+      userInfo: {}, //正在分配权限的用户信息
+      userRole: '', //用户即将分配的角色
       loading: false,
       addDialogVisiable: false,
       addUserForm: {
@@ -142,6 +179,7 @@ export default {
         mobile: '',
         email: '',
       },
+      setRoleDialogVisible: false, //分配角色对话框
       addUserFormRules: {
         username: [
           {
@@ -291,6 +329,29 @@ export default {
           this.$message.info('取消删除')
         })
     },
+    // 展示分配角色对话框
+    setRole: async function (userInfo) {
+      const { code, data } = await getRoleData({})
+      if (code === 200) {
+        this.roleList = data
+        this.setRoleDialogVisible = true
+        this.userInfo = userInfo
+      } else {
+        this.$message.error('获取角色列表失败')
+      }
+    },
+    setUserRole: async function () {
+      const { code, data } = await updateUser({ role: this.userRole })
+      if (code === 200) {
+        this.$message.success(
+          '成功将【' + this.userInfo.username + '】角色设置为：' + this.userRole
+        )
+        this.getUsers()
+      } else {
+        this.$message.error('更新失败')
+      }
+      this.setRoleDialogVisible = false
+    },
   },
 }
 </script>
@@ -299,6 +360,19 @@ export default {
 .user-container {
   .operate-box {
     margin-bottom: 15px;
+  }
+
+  .set-role-dialog {
+    .box>p {
+      margin: 0 0 15px 0;
+      padding: 0;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
   }
 }
 </style>
