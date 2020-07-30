@@ -17,16 +17,14 @@ Mock.mock(RegExp(settings.baseUrl + '/api/user/selectPage.*'), {
   message: '获取所有用户信息',
   data: {
     total: 54,
-    'records|15': [
-      {
-        'username|1': '@first',
-        state: '@boolean',
-        email: '@email',
-        ip: '@ip',
-        'roleName|+1': ['超级管理员', '狗屁不是', '普通管理员'],
-        createTime: '@date("yyyy-MM-dd HH:mm:ss")'
-      }
-    ]
+    'records|15': [{
+      'username|1': '@first',
+      state: '@boolean',
+      email: '@email',
+      ip: '@ip',
+      'roleName|+1': ['超级管理员', '狗屁不是', '普通管理员'],
+      createTime: '@date("yyyy-MM-dd HH:mm:ss")'
+    }]
   }
 })
 

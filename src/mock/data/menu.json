@@ -44,11 +44,25 @@
     "icon": "el-icon-s-goods",
     "children": [
       {
-        "authName": "用户管理",
-        "id": 22,
+        "authName": "商品列表",
+        "id": 31,
         "children": [],
         "order": 1,
         "path": ""
+      },
+      {
+        "authName": "分类参数",
+        "id": 32,
+        "children": [],
+        "order": 1,
+        "path": ""
+      },
+      {
+        "authName": "商品分类",
+        "id": 22,
+        "children": [],
+        "order": 1,
+        "path": "/categories"
       }
     ],
     "order": 1,

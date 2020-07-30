@@ -5,8 +5,7 @@ Vue.use(Router)
 
 // 路由表
 const router = new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       redirect: '/login'
     },
@@ -23,8 +22,7 @@ const router = new Router({
         title: '首页'
       },
       component: () => import('@/layout/home'),
-      children: [
-        {
+      children: [{
           path: '/welcome',
           name: 'welcome',
           meta: {
@@ -55,6 +53,14 @@ const router = new Router({
             title: '角色列表'
           },
           component: () => import('@/views/power/role')
+        },
+        {
+          path: '/categories',
+          name: 'categories',
+          meta: {
+            title: '分类列表'
+          },
+          component: () => import('@/views/goods/cate')
         }
       ]
     }
