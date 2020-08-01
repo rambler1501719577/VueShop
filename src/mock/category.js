@@ -69,10 +69,38 @@ Mock.mock(RegExp(settings.baseUrl + '/api/category/delete.*'), {
 })
 
 // 查询分类
-Mock.mock(RegExp(settings.baseUrl + '/api/category/selectOne'), {
+Mock.mock(RegExp(settings.baseUrl + '/api/category/selectOne.*'), {
   code: 200,
   message: '查询成功',
   data: {
     classifyName: '@cword(2,5)'
   }
+})
+
+// 查询分类
+Mock.mock(RegExp(settings.baseUrl + '/api/category/params'), () => {
+  return Mock.mock({
+    code: 200,
+    message: '查询成功',
+    'data|5': [{
+      id: '@guid',
+      name: '@cword(2,4)',
+      'value|3': ['@cword(2,4)']
+    }]
+  })
+})
+
+
+// 移除标签
+Mock.mock(RegExp(settings.baseUrl + '/api/category/removeTag.*'), {
+  code: 200,
+  message: '删除成功',
+  data: {}
+})
+
+// 增加标签
+Mock.mock(RegExp(settings.baseUrl + '/api/category/addTag'), {
+  code: 200,
+  message: '新增成功',
+  data: {}
 })

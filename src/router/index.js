@@ -61,6 +61,14 @@ const router = new Router({
             title: '分类列表'
           },
           component: () => import('@/views/goods/cate')
+        },
+        {
+          path: '/params',
+          name: 'params',
+          meta: {
+            title: '分类参数'
+          },
+          component: () => import('@/views/goods/params')
         }
       ]
     }

@@ -53,3 +53,30 @@ export function deleteCategory(params) {
     url: '/api/category/delete'
   })
 }
+
+// 获取某个分类的静态/动态参数
+export function classifyParam(params) {
+  return request({
+    method: 'GET',
+    params,
+    url: '/api/category/params'
+  })
+}
+
+// 移除标签
+export function removeClassifyTag(params) {
+  return request({
+    method: 'DELETE',
+    params,
+    url: '/api/category/removeTag'
+  })
+}
+
+// 增加标签
+export function addCategoryTag(params) {
+  return request({
+    method: 'POST',
+    data: params,
+    url: '/api/category/addTag'
+  })
+}
