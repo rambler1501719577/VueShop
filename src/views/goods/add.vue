@@ -103,7 +103,7 @@
               </div>
               <div class="jumper">
                 <el-button type="primary" @click="step--">上一步</el-button>
-                <el-button type="primary" @click="submitGoods">添加商品</el-button>
+                <el-button type="primary" @click="submitGoods">{{mode=='add'?'新增商品':'修改商品'}}</el-button>
               </div>
             </div>
           </template>
@@ -138,6 +138,7 @@ export default {
     name: 'add',
     data() {
         return {
+            mode: 'add',
             step: 0, // 当前在第几步
             goodsForm: {
                 name: '',
@@ -203,6 +204,18 @@ export default {
             this.staticParam = data
             this.step++
         },
+        // 获取商品具体信息
+        getGoodsDetail: async function () {
+            const { code, data } = await goodsDetail({})
+            if (code === 200) {
+                console.log(data)
+                this.goodsForm = data
+                this.$message.success('获取商品详情成功')
+            } else {
+                this.$message.error('获取商品详情失败')
+            }
+        },
+        // 提交表单
         submitGoods: async function () {
             const form = _.cloneDeep(this.goodsForm)
             form.attribute = []
@@ -220,8 +233,9 @@ export default {
             })
             const { code, data } = await addGoods(form)
             if (code === 200) {
-                this.$message.success('新增商品成功')
-                this.step++
+                if (this.mode === 'add') this.$message.success('新增商品成功')
+                else this.$message.success('修改商品成功')
+                this.$router.push('/list')
             } else {
                 this.$message.error('新增商品失败,请稍后重试')
             }
@@ -229,6 +243,11 @@ export default {
     },
     created() {
         this.getCateList()
+        const params = this.$route.params
+        if (params.mode != null) {
+            this.mode = params.mode
+            this.getGoodsDetail()
+        }
     },
 }
 </script>

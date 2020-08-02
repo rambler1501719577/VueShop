@@ -106,7 +106,14 @@ export default {
             this.$router.push('/goods/add')
         },
         // 编辑商品
-        editGoods: async function (goods) {},
+        editGoods: async function (goods) {
+            this.$router.push({
+                name: 'add',
+                params: {
+                    mode: 'edit',
+                },
+            })
+        },
         // 删除商品
         handleDelete: async function (goods) {
             this.$confirm('是否要删除当前商品', '删除提醒提示', {

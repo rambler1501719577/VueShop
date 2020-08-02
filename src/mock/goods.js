@@ -44,7 +44,11 @@ Mock.mock(RegExp(settings.baseUrl + '/api/goods/selectOne.*'), {
   message: '成功',
   data: {
     id: '@guid',
-    title: '@title',
+    name: '@title',
     price: '@natural(30,50000)',
+    weight: '@natural(1,30)',
+    num: 5,
+    classifyId: '@cword(3,5)',
+    content: '<p>我是商品详情</p>'
   }
 })
