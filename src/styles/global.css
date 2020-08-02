@@ -1,7 +1,19 @@
 html,
 body,
-#app{
-  height:100%;
-  margin:0;
-  padding:0;
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.el-step__title {
+  font-size: 12px
+}
+
+.el-step {
+  position: static !important;
+}
+
+.ql-editor {
+  min-height: 300px;
 }

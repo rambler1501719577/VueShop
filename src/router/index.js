@@ -69,6 +69,22 @@ const router = new Router({
             title: '分类参数'
           },
           component: () => import('@/views/goods/params')
+        },
+        {
+          path: '/list',
+          name: 'list',
+          meta: {
+            title: '商城列表'
+          },
+          component: () => import('@/views/goods/list')
+        },
+        {
+          path: '/goods/add',
+          name: 'add',
+          meta: {
+            title: '添加商品页面'
+          },
+          component: () => import('@/views/goods/add')
         }
       ]
     }
