@@ -64,7 +64,6 @@ export default {
           _this.loading = false;
           if (code === 200) {
             _this.$message.success('欢迎您,' + user.username);
-            console.log(user);
             sessionStorage.setItem('token', JSON.stringify(user));
             _this.$router.push('/home');
           } else {

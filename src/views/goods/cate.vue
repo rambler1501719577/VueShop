@@ -188,7 +188,6 @@ export default {
         },
         // 新增/修改
         submitForm: async function () {
-            console.log(this.addClassifyForm)
             this.$refs.addClassifyDialog.validate(async (valid) => {
                 if (!valid) {
                     return this.$message.error('参数校验失败')
@@ -224,7 +223,6 @@ export default {
         },
         // 关闭对话框清空值
         addDialogClose: function () {
-            console.log('清空')
             this.$refs.addClassifyDialog.resetFields()
             this.selectedKeys = []
             this.addClassifyForm.level = 0

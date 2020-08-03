@@ -190,7 +190,6 @@ export default {
             this.loading = true
             const { code, data: result } = await orderList(this.queryParam)
             this.orderList = result.records
-            console.log(this.orderList)
             this.total = result.total
             this.loading = false
         },

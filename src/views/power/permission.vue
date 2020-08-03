@@ -58,7 +58,6 @@ export default {
     getPermissionData: async function () {
       const { code, data: result } = await permissionList(this.queryParam)
       this.permissionData = result
-      console.log(result)
     },
   },
 }

@@ -17,7 +17,7 @@ const router = new Router({
     {
       path: '/home',
       name: 'home',
-      redirect: '/welcome',
+      redirect: '/users',
       meta: {
         title: '首页'
       },

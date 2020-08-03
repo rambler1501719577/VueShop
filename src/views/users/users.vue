@@ -25,7 +25,7 @@
           <el-input v-model="addUserForm.username" :disabled="mode=='edit'?true:false"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
-          <el-input v-model="addUserForm.password"></el-input>
+          <el-input type="password" v-model="addUserForm.password"></el-input>
         </el-form-item>
         <el-form-item label="手机" prop="mobile">
           <el-input v-model="addUserForm.mobile"></el-input>
@@ -266,6 +266,7 @@ export default {
     // 清空增加用户表单
     clearForm: function () {
       this.$refs.addUserFormRef.resetFields()
+      this.addUserForm = {}
     },
     // 提交表单
     submitForm: function () {

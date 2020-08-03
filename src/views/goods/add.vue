@@ -208,7 +208,6 @@ export default {
         getGoodsDetail: async function () {
             const { code, data } = await goodsDetail({})
             if (code === 200) {
-                console.log(data)
                 this.goodsForm = data
                 this.$message.success('获取商品详情成功')
             } else {

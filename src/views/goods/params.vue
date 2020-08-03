@@ -212,7 +212,6 @@ export default {
         // 确认新标签输入
         handleInputConfirm: async function (scope) {
             scope.row.visible = false
-            console.log(scope.row.inputValue)
             if (scope.row.inputValue.trim() != '') {
                 const { code } = await addCategoryTag({
                     name: scope.row.inputValue,
