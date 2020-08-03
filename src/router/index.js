@@ -93,6 +93,14 @@ const router = new Router({
             title: '所有订单'
           },
           component: () => import('@/views/order/order')
+        },
+        {
+          path: '/report',
+          name: 'report',
+          meta: {
+            title: '数据报表'
+          },
+          component: () => import('@/views/report/report')
         }
       ]
     }

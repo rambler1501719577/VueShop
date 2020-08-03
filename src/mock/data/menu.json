@@ -82,13 +82,13 @@
     "id": 5,
     "icon": "el-icon-s-data",
     "children": [{
-      "authName": "用户管理",
+      "authName": "数据报表",
       "id": 22,
       "children": [],
       "order": 1,
-      "path": ""
+      "path": "/report"
     }],
     "order": 1,
-    "path": ""
+    "path": "/"
   }
 ]
