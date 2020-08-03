@@ -68,14 +68,14 @@
     "id": 4,
     "icon": "el-icon-s-order",
     "children": [{
-      "authName": "用户管理",
+      "authName": "所有订单",
       "id": 22,
       "children": [],
       "order": 1,
-      "path": ""
+      "path": "/order"
     }],
     "order": 1,
-    "path": "/order"
+    "path": "/"
   },
   {
     "authName": "数据管理",

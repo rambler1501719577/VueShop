@@ -85,6 +85,14 @@ const router = new Router({
             title: '添加商品页面'
           },
           component: () => import('@/views/goods/add')
+        },
+        {
+          path: '/order',
+          name: 'order',
+          meta: {
+            title: '所有订单'
+          },
+          component: () => import('@/views/order/order')
         }
       ]
     }
