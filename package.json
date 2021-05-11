@@ -40,7 +40,7 @@
     "html-webpack-plugin": "^2.30.1",
     "less": "^3.12.2",
     "less-loader": "^6.2.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
